@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/muratumutlu/app-factory/schema/pipeline.schema.json",
+  "$id": "https://github.com/alimuratumutlu/app-factory/schema/pipeline.schema.json",
   "title": "App Factory Pipeline",
   "type": "object",
   "required": ["version", "name", "nodes", "edges"],
