@@ -3,39 +3,52 @@
 ## v0.1 - Public Scaffold
 
 - Tauri + React + TypeScript app
-- React Flow workbench prototype
-- Open pipeline schema
-- Fullstack app factory example pipeline
-- GitHub issues and release plan
+- White Goal-to-Pipeline workbench UI
+- React Flow planning graph preview
+- Open goal pipeline schema
+- Goal-to-pipeline example template
+- Signed and notarized Apple Silicon prerelease
 
-## v0.2 - Local Runner
+## v0.2 - Intake and Reflection
 
-- Rust command runner for shell nodes
-- Streaming logs in the UI
-- Success/failure state per node
-- File checkpoint assertions
-- Sequential execution engine
+- Editable initial intake form
+- Local AI key settings screen
+- Fixed base question flow
+- AI-generated follow-up question draft
+- Problem reflection screen
+- User confirmation/correction before planning
 
-## v0.3 - Coding Agent Adapters
+## v0.3 - Goal Decomposition
 
-- Codex adapter
-- Claude Code adapter
-- Adapter capability detection
-- Prompt file support
-- Working directory and input/output mapping
+- Structured decomposition into subgoals, milestones, actions, risks, and
+  checkpoints
+- First 7 days and first 30 days plan blocks
+- Anti-goals and decision points
+- Plan JSON import/export
+- Validation for goal pipeline examples
 
-## v0.4 - Workflow Control
+## v0.4 - Multi-View Planning
 
-- Pause/resume
-- Manual gates
-- Failure routing
-- QA feedback loops
-- Pipeline run history
+- Kanban view
+- Timeline view
+- Graph view
+- Table view
+- Pipeline view
+- Shared editable plan model across all views
 
-## v0.5 - macOS Release Candidate
+## v0.5 - Optional Execution
 
-- macOS bundle
-- Signing and notarization plan
-- Auto-update research
-- Release notes generator
-- Public demo video
+- AI research node
+- Document generation node
+- GitHub issue creation node
+- Shell command node for software/project workflows
+- Calendar planning and weekly review nodes
+- Clear permission and safety model for executable actions
+
+## v0.6 - Launch Surface
+
+- GitHub Pages product site
+- Demo video
+- Custom domain setup
+- Signed universal macOS release research
+- Public examples for product, career, and open source project goals

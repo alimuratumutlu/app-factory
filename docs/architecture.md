@@ -2,62 +2,129 @@
 
 ## Positioning
 
-App Factory Workbench is a local-first desktop runner for software-delivery
-agent pipelines. It is narrower than n8n, Dify, or Flowise: the workflows are
-designed for repositories, coding agents, shell commands, test suites, QA, and
-release tasks.
+App Factory Workbench is a local-first Goal-to-Pipeline desktop app. It turns a
+messy goal, project, or life situation into a structured action map that the
+user can inspect as kanban, timeline, graph, table, or pipeline.
+
+It should not behave like an AI life coach that immediately gives advice. The
+core product behavior is:
+
+1. ask better questions
+2. reflect the understood problem
+3. wait for user correction
+4. decompose the confirmed goal
+5. render editable planning views
 
 ## Stack
 
 - Desktop shell: Tauri
 - UI: React, TypeScript, React Flow
-- Command runner: Rust
-- Pipeline format: JSON
+- Planning format: JSON
 - Templates: checked into `examples/`
+- Future execution: Rust-owned local process and filesystem operations
 
 ## Core Concepts
 
-### Pipeline
+### Goal Pipeline
 
-A pipeline is a graph of nodes and edges. Nodes declare runtime type, input
-files, output files, prompt files, command configuration, and success criteria.
+A goal pipeline is a planning graph. It is not necessarily an executable
+automation.
 
-### Node Runtime
+Nodes can represent:
 
-Initial runtime types:
+- intake questions
+- AI-generated follow-up questions
+- problem reflection
+- goals and subgoals
+- milestones
+- actions
+- checkpoints
+- decision points
+- risks
+- views
 
-- `codex`
-- `claude`
-- `shell`
-- `checkpoint`
-- `manual_gate`
-- `qa_review`
-- `release`
+Edges represent dependency, sequence, revision, or feedback loops.
 
-### Runner
+### Intake
 
-The runner executes nodes in dependency order. v0.2 starts with sequential
-execution. Parallel execution should wait until cancellation, logs, and state are
-stable.
+The app starts with fixed user-facing questions:
 
-### Artifacts
+- What do you want to change?
+- Where are you right now?
+- What resources do you already have?
+- How much time can you commit?
+- What would success look like?
 
-Each node can write artifacts to the target repository:
+These questions keep the first interaction predictable and prevent the AI from
+guessing too early.
 
-- generated docs
-- code files
-- test reports
-- logs
-- release notes
+### AI Follow-ups
+
+After the fixed intake, AI can generate context-specific follow-ups. These
+questions should search for missing constraints, hidden motivation, repeated
+decision loops, and risks.
+
+### Problem Reflection
+
+Before generating a plan, the AI writes a reflection:
+
+```text
+I understand the problem as...
+The main bottleneck appears to be...
+What did I misunderstand or miss?
+```
+
+The user must be able to confirm or edit this before decomposition.
+
+### Decomposition
+
+The decomposition phase creates:
+
+- main goal
+- subgoals
+- first 7 days
+- first 30 days
+- milestones
+- checkpoints
+- decision points
+- risks
+- anti-goals
+
+### Views
+
+The plan model should be view-independent. The same underlying plan can render
+as:
+
+- kanban
+- timeline
+- graph
+- table
+- pipeline
+
+### Future Executable Nodes
+
+Executable behavior is optional and later. Candidate executable nodes:
+
+- AI research
+- document generation
+- GitHub issue creation
+- shell command
+- calendar planning
+- weekly review
+
+The product should make a clear distinction between planning nodes and
+executable nodes.
 
 ## Security Model
 
-Shell, Codex, and Claude nodes can execute local commands. The first release must
-make this explicit and visible:
+The current Goal-to-Pipeline flow is a planning surface. When executable nodes
+are introduced, they must be explicit and user-controlled:
 
-- show the command before execution
-- require a trusted repository
-- keep logs on disk
-- never hide shell activity from the user
+- show every command or external action before execution
+- require user approval for destructive or account-changing actions
+- keep generated artifacts inspectable
+- distinguish advice, inference, and user-provided facts
+- avoid presenting high-stakes personal, medical, legal, or financial output as
+  authoritative guidance
 
-Sandboxing and allowlists are future work.
+Sandboxing, connector permissions, and allowlists are future work.

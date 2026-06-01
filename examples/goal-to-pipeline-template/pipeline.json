@@ -1,0 +1,137 @@
+{
+  "version": "0.1.0",
+  "name": "Goal-to-Pipeline Workbench",
+  "description": "A planning template that turns a messy goal into an editable action map.",
+  "nodes": [
+    {
+      "id": "initial-intake",
+      "type": "intake",
+      "label": "Initial Intake",
+      "description": "Capture the user's current situation, resources, constraints, and target outcome.",
+      "questions": [
+        "What do you want to change?",
+        "Where are you right now?",
+        "What resources do you already have?",
+        "How much time can you commit?",
+        "What would success look like?"
+      ]
+    },
+    {
+      "id": "ai-followups",
+      "type": "ai_questions",
+      "label": "AI Follow-up Questions",
+      "description": "Generate context-specific questions from the user's intake answers.",
+      "questions": [
+        "What is the real motivation behind this goal?",
+        "Is the biggest constraint time, energy, money, skill, or support?",
+        "What would you lose if nothing changes?",
+        "Which decision keeps you stuck right now?"
+      ]
+    },
+    {
+      "id": "problem-reflection",
+      "type": "reflection",
+      "label": "Problem Reflection",
+      "description": "Summarize the understood problem and ask the user to confirm or correct it.",
+      "outputs": ["reflection/understood-problem.md"]
+    },
+    {
+      "id": "goal-decomposition",
+      "type": "goal",
+      "label": "Goal Decomposition",
+      "description": "Break the confirmed goal into subgoals, milestones, decision points, risks, and actions.",
+      "outputs": ["plan/decomposition.json"]
+    },
+    {
+      "id": "first-week",
+      "type": "milestone",
+      "label": "First 7 Days",
+      "description": "Define the smallest visible proof that the user can complete in the first week.",
+      "timeframe": "7 days",
+      "priority": "high"
+    },
+    {
+      "id": "first-month",
+      "type": "milestone",
+      "label": "First 30 Days",
+      "description": "Define the first meaningful outcome and review point.",
+      "timeframe": "30 days",
+      "priority": "high"
+    },
+    {
+      "id": "risks",
+      "type": "risk",
+      "label": "Risks and Anti-Goals",
+      "description": "List what could make the plan unrealistic and what the user should avoid.",
+      "priority": "medium"
+    },
+    {
+      "id": "checkpoints",
+      "type": "checkpoint",
+      "label": "Review Checkpoints",
+      "description": "Create review moments where the user can revise the plan instead of blindly continuing.",
+      "timeframe": "weekly"
+    },
+    {
+      "id": "view-selection",
+      "type": "view",
+      "label": "View Selection",
+      "description": "Render the same plan as kanban, timeline, graph, table, or pipeline.",
+      "viewModes": ["kanban", "timeline", "graph", "table", "pipeline"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "intake-followups",
+      "source": "initial-intake",
+      "target": "ai-followups"
+    },
+    {
+      "id": "followups-reflection",
+      "source": "ai-followups",
+      "target": "problem-reflection"
+    },
+    {
+      "id": "reflection-decomposition",
+      "source": "problem-reflection",
+      "target": "goal-decomposition",
+      "condition": "user confirms or edits the reflection"
+    },
+    {
+      "id": "decomposition-first-week",
+      "source": "goal-decomposition",
+      "target": "first-week"
+    },
+    {
+      "id": "decomposition-first-month",
+      "source": "goal-decomposition",
+      "target": "first-month"
+    },
+    {
+      "id": "decomposition-risks",
+      "source": "goal-decomposition",
+      "target": "risks"
+    },
+    {
+      "id": "milestones-checkpoints",
+      "source": "first-month",
+      "target": "checkpoints"
+    },
+    {
+      "id": "risks-checkpoints",
+      "source": "risks",
+      "target": "checkpoints"
+    },
+    {
+      "id": "checkpoints-views",
+      "source": "checkpoints",
+      "target": "view-selection"
+    },
+    {
+      "id": "checkpoint-revision",
+      "source": "checkpoints",
+      "target": "problem-reflection",
+      "condition": "the plan no longer matches reality"
+    }
+  ]
+}

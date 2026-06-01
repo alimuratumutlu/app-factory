@@ -2,9 +2,13 @@
 
 ## Release Goals
 
-The first public macOS release should prove one thing: a developer can design a
-local coding-agent pipeline and run it against a repository with visible logs,
-artifacts, and checkpoints.
+The first public macOS release should prove one thing: App Factory Workbench is
+a credible signed desktop surface for turning messy goals into editable action
+maps.
+
+The early product is not an autonomous runner. It is a Goal-to-Pipeline
+workbench where the user can describe a goal, answer questions, review the AI's
+understanding, and inspect a structured plan.
 
 ## v0.1 Release
 
@@ -12,9 +16,10 @@ Scope:
 
 - Public GitHub repository
 - Tauri desktop scaffold
-- React Flow workbench prototype
-- Pipeline JSON schema
-- Example fullstack pipeline
+- White Goal-to-Pipeline workbench prototype
+- Goal pipeline JSON schema
+- Goal-to-pipeline example template
+- Signed and notarized Apple Silicon prerelease
 - README, roadmap, issue templates
 
 Verification:
@@ -26,33 +31,37 @@ Verification:
 
 Scope:
 
-- Shell node execution through Rust
-- Log streaming
-- Node status updates
-- File checkpoint validation
+- Editable initial intake
+- AI key settings
+- Fixed base question flow
+- AI-generated follow-up questions
+- Problem reflection with user confirmation/correction
 
 Verification:
 
-- Run a pipeline with `npm run test` or `npm run build`
-- Confirm failed shell command marks node as failed
-- Confirm checkpoint node validates output files
+- User can enter a goal and current state
+- User can see fixed intake questions
+- AI follow-up questions are generated from the intake context
+- AI reflection is shown before any plan is generated
+- User can correct the reflection
 
-## v0.5 macOS Release Candidate
+## v0.3 Release
 
 Scope:
 
-- Signed macOS app
-- Release artifact on GitHub Releases
-- Apple Silicon release first; Intel x86_64 packaging is tracked separately
-- Demo pipeline included
-- Installation instructions
+- Goal decomposition
+- First 7 days and first 30 days planning blocks
+- Milestones, actions, risks, checkpoints, and decision points
+- Kanban, timeline, graph, table, and pipeline view selection
+- Plan import/export
 
 Open questions:
 
-- Signing identity and Apple Developer account
-- Notarization workflow
+- Which AI providers should be supported first
+- How to store local API keys safely
+- Whether plan files should live inside a selected workspace
 - Auto-update strategy
-- Whether releases should ship as `.dmg`, `.app.zip`, or both
+- Whether releases should ship as `.dmg`, `.app.tar.gz`, or both
 
 ## Signing and Notarization Requirements
 

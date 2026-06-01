@@ -1,94 +1,126 @@
 # App Factory Workbench
 
-A macOS desktop app for designing and running local coding-agent pipelines with
-Codex, Claude Code, and shell commands.
+Goal-to-Pipeline Workbench for turning messy goals into structured action maps.
 
-App Factory Workbench is a visual runner for local coding-agent pipelines. It is
-not another chatbot builder. It gives developers a canvas for designing software
-delivery workflows that run against a real local repository, keep state on disk,
-and make each agent handoff inspectable.
+App Factory Workbench helps a user describe a complex goal, answer the right
+follow-up questions, confirm what the real problem is, and then view the plan as
+kanban, timeline, graph, table, or pipeline.
 
-> We are building an open local orchestration standard and desktop runner for
-> Codex-based software delivery pipelines.
+The pipeline is a planning object first. It can later include executable nodes
+for AI research, document generation, GitHub issues, shell commands, calendar
+planning, or weekly reviews, but the first value is helping the user think,
+revise, and choose the next move.
+
+> Design your next move.
 
 ## What It Does
 
-- Design pipelines visually with React Flow
-- Run node types for Codex, Claude Code, shell commands, file checkpoints, manual
-  gates, QA review, and release tasks
-- Save pipelines as portable JSON
-- Execute locally through a Rust command runner
-- Keep artifacts, logs, and checkpoints inside the selected repository
-- Ship starter templates, including a fullstack app factory pipeline
+- Collects an initial goal, current situation, resources, constraints, and
+  desired outcome.
+- Uses fixed intake questions before generating context-specific AI follow-ups.
+- Reflects the understood problem before proposing a solution.
+- Decomposes the confirmed goal into milestones, actions, risks, checkpoints,
+  decision points, and anti-goals.
+- Lets the user inspect the same plan as kanban, timeline, graph, table, or
+  pipeline.
+- Keeps the plan editable instead of treating AI output as final.
 
-## Why This Exists
-
-Coding agents are powerful, but long-running software work still breaks down:
-
-- prompts lose context
-- terminal sessions get interrupted
-- handoffs between planning, coding, QA, and release are not visible
-- generated apps are hard to review after the fact
-
-App Factory Workbench treats coding-agent work as a local pipeline:
+## Product Flow
 
 ```text
-Brief -> PM -> Tech Lead -> Backend -> Frontend -> Tests -> QA -> Release
+Initial Intake
+  -> AI Follow-up Questions
+  -> Problem Reflection
+  -> Goal Decomposition
+  -> View Selection
 ```
 
-Each node has inputs, outputs, a runtime, success criteria, and logs.
+### 1. Initial Intake
+
+The user describes:
+
+- what they want to change
+- where they are now
+- what resources they already have
+- how much time they can commit
+- what success looks like
+
+### 2. AI Follow-up Questions
+
+The app starts from a small fixed set of questions, then asks AI to generate
+better follow-ups from the missing context.
+
+Example follow-ups:
+
+- What is the real motivation behind this goal?
+- Is the biggest constraint time, energy, money, skill, or support?
+- What would you lose if nothing changes?
+- Which decision keeps you stuck right now?
+
+### 3. Problem Reflection
+
+The AI does not jump directly into advice. It first reflects:
+
+```text
+I understand the problem as...
+The main bottleneck appears to be...
+What did I misunderstand or miss?
+```
+
+This step prevents the app from generating a polished plan for the wrong
+problem.
+
+### 4. Goal Decomposition
+
+After the user confirms or edits the reflection, the app breaks the goal into:
+
+- main goal and subgoals
+- first 7 days
+- first 30 days
+- milestones
+- checkpoints
+- decision points
+- risks
+- things not to do
+
+### 5. View Selection
+
+The same plan can be inspected in multiple ways:
+
+| View | Purpose |
+| --- | --- |
+| Kanban | To do, doing, waiting, done |
+| Timeline | Weekly or monthly roadmap |
+| Graph | Goals, dependencies, bottlenecks |
+| Table | Task, priority, duration, difficulty, impact |
+| Pipeline | Staged flow with checkpoints and decision gates |
 
 ## Product Shape
 
 ```text
 app-factory/
-├── src/                         # React + React Flow workbench UI
-├── src-tauri/                   # Tauri shell and Rust command runner
-├── schema/                      # Open pipeline schema
+├── src/                            # React + React Flow workbench UI
+├── src-tauri/                      # Tauri desktop shell
+├── schema/                         # Open goal pipeline schema
 ├── examples/
-│   └── fullstack-app-template/  # First ready-made agent pipeline
-├── docs/                        # Architecture, roadmap, release plan
-└── .github/                     # Issues, release workflow, contribution docs
+│   ├── goal-to-pipeline-template/  # Core human planning template
+│   └── fullstack-app-template/     # Developer-oriented future template
+├── docs/                           # Architecture, roadmap, release plan
+└── .github/                        # Issues, release workflow, contribution docs
 ```
 
-## Runtime Nodes
+## Future Executable Nodes
 
-| Node | Purpose |
+Planning comes first, but some nodes can become executable later:
+
+| Node | Future behavior |
 | --- | --- |
-| Codex | Run a Codex local-agent prompt against a repo |
-| Claude Code | Run a Claude Code prompt against a repo |
-| Shell | Run tests, build commands, scripts, or custom checks |
-| Checkpoint | Assert files exist or match expected output |
-| Manual Gate | Pause for human review before continuing |
-| QA Review | Inspect generated code and send failures back |
-| Release | Build, sign, package, or publish artifacts |
-
-## MVP Scope
-
-The first release focuses on macOS and local execution:
-
-1. Visual pipeline canvas
-2. Node config side panel
-3. JSON pipeline import/export
-4. Sequential execution engine
-5. Rust command runner for shell commands
-6. Codex and Claude Code adapter stubs
-7. Fullstack app template pipeline
-8. Run logs and artifact list
-9. macOS release build plan
-
-## Performance Position
-
-We are using Tauri + React Flow + Rust because the app has two different
-performance profiles:
-
-- The UI is graph editing, node configuration, and logs. React Flow is mature
-  enough for this and keeps iteration fast.
-- The heavy work is process orchestration. Rust owns command execution,
-  cancellation, streaming logs, filesystem checks, and future sandboxing.
-
-This keeps the desktop app lighter than an Electron-first implementation while
-still giving us a strong visual UI stack.
+| AI research | Gather options or summarize context from a user-approved prompt |
+| Document generation | Create briefs, plans, PRDs, or review notes |
+| GitHub issue | Turn an action plan into tracked repository issues |
+| Shell command | Run local project commands when the plan is software-related |
+| Calendar planning | Convert milestones into calendar blocks |
+| Weekly review | Ask what changed and revise the plan |
 
 ## Development
 
@@ -117,57 +149,52 @@ Validate the web build:
 npm run build
 ```
 
+Validate example pipelines:
+
+```bash
+npm run validate:examples
+```
+
 ## macOS Install
 
-The current public macOS release target is a signed and notarized Apple Silicon
-DMG. Older prereleases are kept for history and may still be unsigned.
+The current public macOS prerelease is a signed and notarized Apple Silicon DMG.
 
 Download:
 
 - [App Factory Workbench v0.1.3](https://github.com/alimuratumutlu/app-factory/releases/tag/v0.1.3)
 - [App Factory Workbench releases](https://github.com/alimuratumutlu/app-factory/releases)
 
-If macOS shows this warning:
+If macOS shows this warning on `v0.1.1` or another unsigned prerelease:
 
 ```text
 "App Factory Workbench" is damaged and can't be opened.
 You should move it to the Trash.
 ```
 
-on `v0.1.1` or another unsigned prerelease, it usually means Gatekeeper
-quarantined the app after download. If you trust the release source and
-downloaded it from this repository, remove the quarantine attribute:
+it usually means Gatekeeper quarantined the unsigned app after download. If you
+trust the release source and downloaded it from this repository, remove the
+quarantine attribute:
 
 ```bash
 xattr -dr com.apple.quarantine "/Applications/App Factory Workbench.app"
 ```
 
-If the app is still in Downloads:
-
-```bash
-xattr -dr com.apple.quarantine "$HOME/Downloads/App Factory Workbench.app"
-```
-
-The correct long-term fix is Apple Developer ID signing and notarization. The
-release workflow is configured for that path; use the workaround only for older
-unsigned prereleases.
+The `v0.1.3` prerelease is Developer ID signed and notarized. The older `v0.1.1`
+prerelease is unsigned and should be treated as a historical test artifact.
 
 ## Current Status
 
-This repository is at the initial public scaffold stage. The first milestone is
-to turn the static workbench prototype into a runnable local pipeline engine.
-
-The `v0.1.3` macOS prerelease is Developer ID signed and notarized. The older
-`v0.1.1` prerelease is unsigned and should be treated as a historical test
-artifact.
+This repository is at the signed public scaffold stage. The current workbench
+shows the intended Goal-to-Pipeline experience, but the AI intake, reflection,
+decomposition, and multi-view editing flows are not implemented yet.
 
 ## Open Source Roadmap
 
-- v0.1: Static workbench UI, schema, fullstack template
-- v0.2: Local shell runner, logs, checkpoint nodes
-- v0.3: Codex and Claude Code adapters
-- v0.4: Pause/resume, failure routing, QA feedback loops
-- v0.5: macOS signed release candidate
+- v0.1: Signed macOS scaffold, Goal-to-Pipeline UI, schema, examples
+- v0.2: Editable intake, AI follow-up questions, problem reflection
+- v0.3: Goal decomposition and multi-view plan rendering
+- v0.4: Persisted plans, checkpoints, weekly review loops
+- v0.5: Optional executable nodes for software/project workflows
 
 ## Links
 

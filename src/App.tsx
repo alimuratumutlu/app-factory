@@ -115,13 +115,15 @@ const baseQuestions = [
   "What do you want to change?",
   "Where are you right now?",
   "What resources do you already have?",
+  "How much time can you commit?",
   "What would success look like in 30 days?",
 ];
 
 const generatedQuestions = [
-  "Which constraint blocks you most: time, focus, money, skill, or support?",
-  "What decision keeps repeating without becoming an action?",
-  "What would make this plan unrealistic after the first week?",
+  "What is the real motivation behind this goal?",
+  "Is the biggest constraint time, energy, money, skill, or support?",
+  "What would you lose if nothing changes?",
+  "Which decision keeps you stuck right now?",
 ];
 
 const viewModes = [

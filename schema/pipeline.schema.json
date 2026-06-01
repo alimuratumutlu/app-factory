@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/alimuratumutlu/app-factory/schema/pipeline.schema.json",
-  "title": "App Factory Pipeline",
+  "title": "App Factory Goal Pipeline",
   "type": "object",
   "required": ["version", "name", "nodes", "edges"],
   "properties": {
@@ -36,7 +36,24 @@
           "type": "string"
         },
         "type": {
-          "enum": ["codex", "claude", "shell", "checkpoint", "manual_gate", "qa_review", "release"]
+          "enum": [
+            "intake",
+            "ai_questions",
+            "reflection",
+            "goal",
+            "milestone",
+            "action",
+            "checkpoint",
+            "decision",
+            "risk",
+            "view",
+            "codex",
+            "claude",
+            "shell",
+            "manual_gate",
+            "qa_review",
+            "release"
+          ]
         },
         "label": {
           "type": "string"
@@ -49,6 +66,27 @@
         },
         "workingDirectory": {
           "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": ["low", "medium", "high"]
+        },
+        "viewModes": {
+          "type": "array",
+          "items": {
+            "enum": ["kanban", "timeline", "graph", "table", "pipeline"]
+          }
+        },
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "inputs": {
           "type": "array",
