@@ -53,3 +53,49 @@ Open questions:
 - Notarization workflow
 - Auto-update strategy
 - Whether releases should ship as `.dmg`, `.app.zip`, or both
+
+## Signing and Notarization Requirements
+
+Unsigned prereleases may trigger macOS Gatekeeper warnings such as:
+
+```text
+"App Factory Workbench" is damaged and can't be opened.
+You should move it to the Trash.
+```
+
+That warning should not be treated as acceptable for a public release. Public
+macOS builds must be signed with a Developer ID certificate and notarized by
+Apple.
+
+Required Apple assets:
+
+- Paid Apple Developer Program membership
+- Developer ID Application certificate
+- Certificate exported as a `.p12`
+- App Store Connect API key for notarization, or Apple ID app-specific password
+- Apple Team ID
+
+Required GitHub Actions secrets:
+
+| Secret | Purpose |
+| --- | --- |
+| `APPLE_CERTIFICATE` | Base64-encoded `.p12` signing certificate |
+| `APPLE_CERTIFICATE_PASSWORD` | Password for the `.p12` certificate |
+| `APPLE_SIGNING_IDENTITY` | Developer ID Application identity |
+| `APPLE_TEAM_ID` | Apple Developer Team ID |
+| `APPLE_API_KEY` | App Store Connect API key contents for notarization |
+| `APPLE_API_KEY_ID` | App Store Connect API key ID |
+| `APPLE_API_ISSUER` | App Store Connect issuer ID |
+
+Alternative notarization path:
+
+- `APPLE_ID`
+- `APPLE_PASSWORD`
+- `APPLE_TEAM_ID`
+
+Implementation notes:
+
+- Prefer App Store Connect API key notarization over Apple ID password auth.
+- Keep v0.1 prereleases marked as prerelease until signing is complete.
+- Document any manual `xattr` workaround only for contributors and early testers.
+- Once signing is configured, verify the downloaded DMG on a clean macOS machine.

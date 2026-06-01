@@ -117,10 +117,48 @@ Validate the web build:
 npm run build
 ```
 
+## macOS Prerelease Install
+
+The current macOS artifact is an unsigned Apple Silicon prerelease. It is useful
+for contributors and early testing, but it is not yet a polished public
+installer.
+
+Download:
+
+- [App Factory Workbench v0.1.1](https://github.com/alimuratumutlu/app-factory/releases/tag/v0.1.1)
+
+If macOS shows this warning:
+
+```text
+"App Factory Workbench" is damaged and can't be opened.
+You should move it to the Trash.
+```
+
+it usually means Gatekeeper quarantined the unsigned app after download. If you
+trust the release source and downloaded it from this repository, remove the
+quarantine attribute:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/App Factory Workbench.app"
+```
+
+If the app is still in Downloads:
+
+```bash
+xattr -dr com.apple.quarantine "$HOME/Downloads/App Factory Workbench.app"
+```
+
+The correct long-term fix is Apple Developer ID signing and notarization. That
+work is tracked in
+[#11 Prepare macOS signing and notarization workflow](https://github.com/alimuratumutlu/app-factory/issues/11).
+
 ## Current Status
 
 This repository is at the initial public scaffold stage. The first milestone is
 to turn the static workbench prototype into a runnable local pipeline engine.
+
+The v0.1.1 macOS prerelease is unsigned. Signed and notarized builds are planned
+before recommending the app to non-developer users.
 
 ## Open Source Roadmap
 
