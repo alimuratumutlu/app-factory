@@ -13,11 +13,15 @@ import {
   BrainCircuit,
   CalendarDays,
   CheckCircle2,
-  CircleHelp,
+  ChevronDown,
+  ChevronRight,
+  FileText,
+  Folder,
   GitBranch,
   LayoutGrid,
   MessageSquareText,
   Network,
+  Plus,
   Settings2,
   Sparkles,
   Table2,
@@ -114,14 +118,6 @@ const goalEdges: Edge[] = [
   },
 ];
 
-const baseQuestions = [
-  "What do you want to change?",
-  "Where are you right now?",
-  "What resources do you already have?",
-  "How much time can you commit?",
-  "What would success look like in 30 days?",
-];
-
 const generatedQuestions = [
   "What is the real motivation behind this goal?",
   "Is the biggest constraint time, energy, money, skill, or support?",
@@ -145,7 +141,66 @@ type GraphState = {
   onNodesChange: ReturnType<typeof useNodesState<Node<GoalNodeData>>>[2];
 };
 
-const planRows = [
+type PipelineFile = {
+  id: string;
+  name: string;
+  description: string;
+  status: string;
+};
+
+type WorkspaceProject = {
+  id: string;
+  name: string;
+  files: PipelineFile[];
+};
+
+const initialProjects: WorkspaceProject[] = [
+  {
+    id: "app-factory",
+    name: "App Factory",
+    files: [
+      {
+        id: "public-launch",
+        name: "Public launch map",
+        description:
+          "Turn a rough product idea into a credible public launch.",
+        status: "Draft",
+      },
+      {
+        id: "ai-intake",
+        name: "AI intake questions",
+        description: "Design the first follow-up question flow.",
+        status: "Review",
+      },
+    ],
+  },
+  {
+    id: "personal-systems",
+    name: "Personal systems",
+    files: [
+      {
+        id: "weekly-reset",
+        name: "Weekly reset pipeline",
+        description: "Make a lightweight weekly review and next-step map.",
+        status: "Idea",
+      },
+    ],
+  },
+  {
+    id: "open-source",
+    name: "Open source support",
+    files: [
+      {
+        id: "grant-readiness",
+        name: "Grant readiness path",
+        description: "Prepare the project story for open source support.",
+        status: "Draft",
+      },
+    ],
+  },
+];
+
+const planRows: [string, string, string, string][] = [
   ["Week 1", "Define the real constraint", "High", "Reflection"],
   ["Week 2", "Build the first visible proof", "High", "Action"],
   ["Week 3", "Review what changed", "Medium", "Checkpoint"],
@@ -278,32 +333,171 @@ function App() {
   const [selectedView, setSelectedView] = useState<ViewMode>("Graph");
   const [nodes, , onNodesChange] = useNodesState<Node<GoalNodeData>>(goalNodes);
   const [edges] = useEdgesState(goalEdges);
+  const [projects, setProjects] = useState(initialProjects);
+  const [expandedProjectIds, setExpandedProjectIds] = useState(
+    () => new Set(initialProjects.map((project) => project.id)),
+  );
+  const [selectedProjectId, setSelectedProjectId] = useState(
+    initialProjects[0].id,
+  );
+  const [selectedFileId, setSelectedFileId] = useState(
+    initialProjects[0].files[0].id,
+  );
   const [questionsGenerated, setQuestionsGenerated] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const selectedProject =
+    projects.find((project) => project.id === selectedProjectId) ?? projects[0];
+  const selectedFile =
+    selectedProject.files.find((file) => file.id === selectedFileId) ??
+    selectedProject.files[0];
+
+  function toggleProject(projectId: string) {
+    setExpandedProjectIds((current) => {
+      const next = new Set(current);
+      if (next.has(projectId)) {
+        next.delete(projectId);
+      } else {
+        next.add(projectId);
+      }
+      return next;
+    });
+  }
+
+  function createWorkspace() {
+    const nextIndex = projects.length + 1;
+    const projectId = `workspace-${nextIndex}`;
+    const fileId = `${projectId}-first-goal`;
+    const nextProject: WorkspaceProject = {
+      id: projectId,
+      name: `Workspace ${nextIndex}`,
+      files: [
+        {
+          id: fileId,
+          name: "First goal map",
+          description: "Capture the first goal for this workspace.",
+          status: "New",
+        },
+      ],
+    };
+
+    setProjects((current) => [...current, nextProject]);
+    setExpandedProjectIds((current) => new Set(current).add(projectId));
+    setSelectedProjectId(projectId);
+    setSelectedFileId(fileId);
+  }
+
+  function createPipelineFile() {
+    const nextFileId = `${selectedProject.id}-pipeline-${selectedProject.files.length + 1}`;
+    const nextFile: PipelineFile = {
+      id: nextFileId,
+      name: `Goal pipeline ${selectedProject.files.length + 1}`,
+      description: "New editable goal-to-pipeline file.",
+      status: "New",
+    };
+
+    setProjects((current) =>
+      current.map((project) =>
+        project.id === selectedProject.id
+          ? { ...project, files: [...project.files, nextFile] }
+          : project,
+      ),
+    );
+    setExpandedProjectIds((current) => new Set(current).add(selectedProject.id));
+    setSelectedFileId(nextFileId);
+  }
 
   return (
     <main className="app-shell">
       <aside className="left-rail">
-        <div className="brand">
-          <div className="brand-mark">
-            <GitBranch size={21} />
+        <div className="sidebar-header">
+          <div className="brand">
+            <div className="brand-mark">
+              <GitBranch size={21} />
+            </div>
+            <div>
+              <p>App Factory</p>
+              <h1>Goal-to-Pipeline</h1>
+            </div>
           </div>
-          <div>
-            <p>App Factory</p>
-            <h1>Goal-to-Pipeline</h1>
+          <div className="sidebar-actions">
+            <button className="sidebar-action" type="button" onClick={createWorkspace}>
+              <Plus size={15} />
+              Workspace
+            </button>
+            <button className="sidebar-action" type="button" onClick={createPipelineFile}>
+              <FileText size={15} />
+              New pipeline
+            </button>
           </div>
         </div>
 
-        <section className="goal-card">
+        <nav className="project-browser" aria-label="Project folders">
+          <div className="section-title">
+            <Folder size={17} />
+            <span>Project folders</span>
+          </div>
+          <div className="project-list">
+            {projects.map((project) => {
+              const isExpanded = expandedProjectIds.has(project.id);
+              return (
+                <div className="project-group" key={project.id}>
+                  <button
+                    className={
+                      selectedProject.id === project.id
+                        ? "project-row selected"
+                        : "project-row"
+                    }
+                    type="button"
+                    onClick={() => {
+                      setSelectedProjectId(project.id);
+                      toggleProject(project.id);
+                    }}
+                  >
+                    {isExpanded ? (
+                      <ChevronDown size={15} />
+                    ) : (
+                      <ChevronRight size={15} />
+                    )}
+                    <Folder size={15} />
+                    <span>{project.name}</span>
+                    <em>{project.files.length}</em>
+                  </button>
+                  {isExpanded ? (
+                    <div className="file-list">
+                      {project.files.map((file) => (
+                        <button
+                          className={
+                            selectedFile.id === file.id
+                              ? "file-row selected"
+                              : "file-row"
+                          }
+                          key={file.id}
+                          type="button"
+                          onClick={() => {
+                            setSelectedProjectId(project.id);
+                            setSelectedFileId(file.id);
+                          }}
+                        >
+                          <FileText size={14} />
+                          <span>{file.name}</span>
+                          <em>{file.status}</em>
+                        </button>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        </nav>
+
+        <section className="goal-card sidebar-current">
           <div className="section-title">
             <Target size={17} />
-            <span>Current goal</span>
+            <span>Selected pipeline</span>
           </div>
-          <h2>Turn a rough product idea into a credible public launch.</h2>
-          <p>
-            Available assets: signed macOS app, GitHub repo, first release, and
-            a clear open source direction.
-          </p>
+          <h2>{selectedFile.name}</h2>
+          <p>{selectedFile.description}</p>
           <button
             className="primary-action"
             type="button"
@@ -313,27 +507,14 @@ function App() {
             {questionsGenerated ? "Questions ready" : "Generate next questions"}
           </button>
         </section>
-
-        <section className="question-panel">
-          <div className="section-title">
-            <CircleHelp size={17} />
-            <span>Base questions</span>
-          </div>
-          <ul>
-            {baseQuestions.map((question) => (
-              <li key={question}>{question}</li>
-            ))}
-          </ul>
-        </section>
       </aside>
 
       <section className={showSettings ? "workspace settings-open" : "workspace"}>
         <header className="topbar">
           <div>
-            <h2>Turn messy goals into structured action maps.</h2>
+            <h2>{selectedFile.name}</h2>
             <p>
-              The plan is previewed as graph, kanban, timeline, table, or
-              pipeline before anything becomes executable.
+              {selectedProject.name} / {selectedFile.description}
             </p>
           </div>
           <button
