@@ -2,6 +2,8 @@ import {
   Background,
   Controls,
   ReactFlow,
+  useEdgesState,
+  useNodesState,
   type Edge,
   type Node,
 } from "@xyflow/react";
@@ -137,6 +139,12 @@ const viewModes = [
 
 type ViewMode = (typeof viewModes)[number]["label"];
 
+type GraphState = {
+  edges: Edge[];
+  nodes: Node<GoalNodeData>[];
+  onNodesChange: ReturnType<typeof useNodesState<Node<GoalNodeData>>>[2];
+};
+
 const planRows = [
   ["Week 1", "Define the real constraint", "High", "Reflection"],
   ["Week 2", "Build the first visible proof", "High", "Action"],
@@ -179,7 +187,7 @@ const pipelineStages = [
   ["Views", "Render the same plan as graph, kanban, timeline, or table."],
 ];
 
-function renderPlanView(selectedView: ViewMode) {
+function renderPlanView(selectedView: ViewMode, graphState: GraphState) {
   if (selectedView === "Kanban") {
     return (
       <div className="plan-view kanban-board">
@@ -252,10 +260,11 @@ function renderPlanView(selectedView: ViewMode) {
 
   return (
     <ReactFlow
-      nodes={goalNodes}
-      edges={goalEdges}
+      nodes={graphState.nodes}
+      edges={graphState.edges}
       fitView
       fitViewOptions={{ padding: 0.24 }}
+      onNodesChange={graphState.onNodesChange}
       nodesDraggable
       nodesConnectable={false}
     >
@@ -267,6 +276,8 @@ function renderPlanView(selectedView: ViewMode) {
 
 function App() {
   const [selectedView, setSelectedView] = useState<ViewMode>("Graph");
+  const [nodes, , onNodesChange] = useNodesState<Node<GoalNodeData>>(goalNodes);
+  const [edges] = useEdgesState(goalEdges);
   const [questionsGenerated, setQuestionsGenerated] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
@@ -364,7 +375,7 @@ function App() {
         </div>
 
         <div className="flow-frame">
-          {renderPlanView(selectedView)}
+          {renderPlanView(selectedView, { edges, nodes, onNodesChange })}
         </div>
 
         <footer className="plan-table">
