@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="Solution Factory app icon">
+  <defs>
+    <linearGradient id="base" x1="176" x2="824" y1="96" y2="928" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="270" x2="760" y1="250" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff5a73"/>
+      <stop offset="0.55" stop-color="#ff415c"/>
+      <stop offset="1" stop-color="#e92f4f"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#111827" flood-opacity="0.16"/>
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#ff5061" flood-opacity="0.14"/>
+    </filter>
+    <filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#ff5061" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="transparent"/>
+  <rect x="94" y="94" width="836" height="836" rx="218" fill="url(#base)" filter="url(#softShadow)"/>
+  <rect x="126" y="126" width="772" height="772" rx="188" fill="none" stroke="#ffffff" stroke-width="20" opacity="0.92"/>
+  <path d="M302 626C380 626 392 510 512 510C632 510 646 394 724 394" fill="none" stroke="#fecdd3" stroke-width="76" stroke-linecap="round" opacity="0.78"/>
+  <path d="M302 626C380 626 392 510 512 510C632 510 646 394 724 394" fill="none" stroke="url(#accent)" stroke-width="44" stroke-linecap="round"/>
+  <path d="M512 510V724" fill="none" stroke="url(#accent)" stroke-width="44" stroke-linecap="round"/>
+  <path d="M512 510V282" fill="none" stroke="#ff8a9a" stroke-width="34" stroke-linecap="round" opacity="0.92"/>
+
+  <g filter="url(#nodeShadow)">
+    <circle cx="302" cy="626" r="82" fill="url(#accent)"/>
+    <circle cx="512" cy="510" r="92" fill="url(#accent)"/>
+    <circle cx="724" cy="394" r="82" fill="url(#accent)"/>
+  </g>
+
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M270 626h64" stroke-width="34"/>
+    <path d="M512 474v72M476 510h72" stroke-width="34"/>
+    <path d="M690 372l48 48M738 372l-48 48" stroke-width="31"/>
+  </g>
+</svg>
