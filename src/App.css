@@ -359,6 +359,28 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.reflection-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 38px;
+  margin-top: 14px;
+  padding: 8px 12px;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.reflection-confirm:disabled {
+  opacity: 0.58;
+  cursor: wait;
+}
+
 .account-menu-shell {
   position: relative;
   flex: 0 0 auto;

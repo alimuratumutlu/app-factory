@@ -102,6 +102,18 @@ The decomposition phase creates:
 - risks
 - anti-goals
 
+The final solution map must not be generated until the user confirms the AI
+reflection. After confirmation, the generator works backward from the desired
+outcome and returns strict JSON matching `schema/solution-map.schema.json`.
+
+The current MVP path supports:
+
+- local fallback solution map generation when no API key is configured
+- OpenRouter strict JSON generation when an API key is configured
+- practical actions separated from optional support practices
+- pipeline and table views reading from the same generated `SolutionMap`
+- regeneration after the reflection has already been confirmed
+
 ### Spiritual Support
 
 Spiritual support is optional and controlled by user settings. It is not a

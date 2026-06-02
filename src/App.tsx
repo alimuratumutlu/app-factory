@@ -266,6 +266,65 @@ type QuestionSet = {
   summary: string;
 };
 
+type SolutionMapPlanItem = {
+  id: string;
+  title: string;
+  description?: string;
+  timeframe?: string;
+  priority?: "low" | "medium" | "high";
+};
+
+type SolutionMapAction = SolutionMapPlanItem & {
+  dependsOn?: string[];
+  effort?: "small" | "medium" | "large";
+  impact?: "low" | "medium" | "high";
+  status?: "todo" | "doing" | "waiting" | "done";
+};
+
+type SolutionMap = {
+  id: string;
+  title: string;
+  version: string;
+  problem: {
+    bottleneck: string;
+    confirmedByUser: boolean;
+    original: string;
+    understood: string;
+  };
+  outcome: {
+    desired: string;
+    successSignals: string[];
+  };
+  reverseEngineering: {
+    currentState: string;
+    endState: string;
+    gaps: string[];
+    leveragePoints: string[];
+  };
+  actions: SolutionMapAction[];
+  antiGoals: string[];
+  checkpoints: Array<{
+    cadence: string;
+    id: string;
+    questions: string[];
+    title: string;
+  }>;
+  decisionPoints: Array<{
+    deadline?: string;
+    id: string;
+    question: string;
+  }>;
+  milestones: SolutionMapPlanItem[];
+  risks: Array<{
+    id: string;
+    mitigation?: string;
+    title: string;
+  }>;
+  subgoals: SolutionMapPlanItem[];
+  supportPractices: ReturnType<typeof recommendSpiritualPractices>;
+  views: Array<"pipeline" | "graph" | "kanban" | "timeline" | "table">;
+};
+
 type ModelOption = {
   label: string;
   value: string;
@@ -511,6 +570,195 @@ function parseQuestionSet(content: string, fallback: QuestionSet) {
   return fallback;
 }
 
+function stripJsonFence(content: string) {
+  return content
+    .trim()
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/i, "")
+    .replace(/\s*```$/i, "");
+}
+
+function createFallbackSolutionMap({
+  file,
+  questionSet,
+  supportPractices,
+}: {
+  file: PipelineFile;
+  questionSet: QuestionSet;
+  supportPractices: ReturnType<typeof recommendSpiritualPractices>;
+}): SolutionMap {
+  return {
+    version: "0.1.0",
+    id: `${file.id}-solution-map`,
+    title: file.name,
+    problem: {
+      original: file.description,
+      understood: questionSet.summary,
+      bottleneck: questionSet.bottleneck,
+      confirmedByUser: true,
+    },
+    outcome: {
+      desired: "Create a concrete next version of the situation that can be reviewed within 30 days.",
+      successSignals: [
+        "The real bottleneck is named",
+        "The first visible proof or behavior change exists",
+        "A weekly review loop is active",
+      ],
+    },
+    reverseEngineering: {
+      endState:
+        "The user can describe the desired change, show one concrete signal of progress, and decide what to adjust next.",
+      currentState: file.description,
+      gaps: [
+        "The desired outcome is still broad",
+        "The first action has not been converted into proof",
+        "Review criteria are not yet explicit",
+      ],
+      leveragePoints: [
+        "Start with one 7-day proof step",
+        "Separate practical actions from optional support",
+        "Review what changed before expanding the plan",
+      ],
+    },
+    subgoals: [
+      {
+        id: "clarify-outcome",
+        title: "Clarify the target outcome",
+        description: "Write the smallest useful version of the change.",
+        timeframe: "Day 1",
+        priority: "high",
+      },
+      {
+        id: "create-proof",
+        title: "Create one visible proof step",
+        description: "Do one action that makes progress observable.",
+        timeframe: "First 7 days",
+        priority: "high",
+      },
+    ],
+    actions: [
+      {
+        id: "name-current-state",
+        title: "Name the current state",
+        description: "List the facts, constraints, and what has already been tried.",
+        timeframe: "Day 1",
+        priority: "high",
+        status: "todo",
+        effort: "small",
+        impact: "high",
+        dependsOn: [],
+      },
+      {
+        id: "choose-one-move",
+        title: "Choose one next move",
+        description: "Pick the smallest action that can create feedback within a week.",
+        timeframe: "Day 2",
+        priority: "high",
+        status: "todo",
+        effort: "small",
+        impact: "high",
+        dependsOn: ["name-current-state"],
+      },
+      {
+        id: "review-feedback",
+        title: "Review what changed",
+        description: "Compare the result with the intended outcome and adjust the map.",
+        timeframe: "Day 7",
+        priority: "medium",
+        status: "todo",
+        effort: "small",
+        impact: "medium",
+        dependsOn: ["choose-one-move"],
+      },
+    ],
+    milestones: [
+      {
+        id: "first-proof",
+        title: "First proof exists",
+        description: "One observable action or artifact exists.",
+        timeframe: "7 days",
+        priority: "high",
+      },
+      {
+        id: "month-review",
+        title: "30-day review",
+        description: "Decide whether to continue, revise, or stop this direction.",
+        timeframe: "30 days",
+        priority: "high",
+      },
+    ],
+    risks: [
+      {
+        id: "generic-plan",
+        title: "The plan becomes generic",
+        mitigation: "Keep every action tied to the confirmed bottleneck.",
+      },
+      {
+        id: "support-replaces-action",
+        title: "Optional support replaces practical work",
+        mitigation: "Keep spiritual support separate and optional.",
+      },
+    ],
+    antiGoals: [
+      "Do not treat the first AI answer as final truth.",
+      "Do not add spiritual support unless the user enabled it.",
+      "Do not expand the plan before the first feedback loop exists.",
+    ],
+    decisionPoints: [
+      {
+        id: "continue-or-revise",
+        question: "After 7 days, did this next move create useful evidence?",
+        deadline: "Day 7",
+      },
+    ],
+    checkpoints: [
+      {
+        id: "weekly-review",
+        title: "Weekly review",
+        cadence: "weekly",
+        questions: [
+          "What changed?",
+          "What created evidence?",
+          "What should be removed from the plan?",
+        ],
+      },
+    ],
+    supportPractices,
+    views: ["pipeline", "graph", "kanban", "timeline", "table"],
+  };
+}
+
+function parseSolutionMap(content: string, fallback: SolutionMap) {
+  try {
+    const parsed = JSON.parse(stripJsonFence(content)) as Partial<SolutionMap>;
+    if (
+      typeof parsed.id === "string" &&
+      typeof parsed.title === "string" &&
+      parsed.problem?.original &&
+      parsed.problem?.understood &&
+      parsed.problem?.bottleneck &&
+      parsed.outcome?.desired &&
+      Array.isArray(parsed.actions) &&
+      Array.isArray(parsed.checkpoints)
+    ) {
+      return {
+        ...fallback,
+        ...parsed,
+        problem: {
+          ...fallback.problem,
+          ...parsed.problem,
+          confirmedByUser: true,
+        },
+        supportPractices: fallback.supportPractices,
+      };
+    }
+  } catch {
+    return fallback;
+  }
+
+  return fallback;
+}
+
 async function requestOpenRouterQuestionSet({
   apiKey,
   goal,
@@ -560,6 +808,84 @@ async function requestOpenRouterQuestionSet({
   const payload = await response.json();
   const content = payload?.choices?.[0]?.message?.content;
   return typeof content === "string" ? parseQuestionSet(content, fallback) : fallback;
+}
+
+async function requestOpenRouterSolutionMap({
+  apiKey,
+  fallback,
+  file,
+  model,
+  questionSet,
+}: {
+  apiKey: string;
+  fallback: SolutionMap;
+  file: PipelineFile;
+  model: string;
+  questionSet: QuestionSet;
+}) {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "HTTP-Referer": window.location.origin,
+      "X-Title": "Solution Factory",
+    },
+    body: JSON.stringify({
+      model,
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are Solution Factory's solution-map generator. Work backward from the desired outcome. Return only strict JSON. Separate practical actions from optional supportPractices. Do not include spiritual support unless it is already provided in the input.",
+        },
+        {
+          role: "user",
+          content: JSON.stringify({
+            goal: file.description,
+            reflection: questionSet.summary,
+            bottleneck: questionSet.bottleneck,
+            requiredShape: {
+              version: "0.1.0",
+              id: "string",
+              title: "string",
+              problem: {
+                original: "string",
+                understood: "string",
+                bottleneck: "string",
+                confirmedByUser: true,
+              },
+              outcome: { desired: "string", successSignals: ["string"] },
+              reverseEngineering: {
+                endState: "string",
+                currentState: "string",
+                gaps: ["string"],
+                leveragePoints: ["string"],
+              },
+              subgoals: ["plan item objects"],
+              actions: ["action objects with id/title/timeframe/priority/status/effort/impact/dependsOn"],
+              milestones: ["plan item objects"],
+              risks: ["risk objects"],
+              antiGoals: ["string"],
+              decisionPoints: ["decision point objects"],
+              checkpoints: ["checkpoint objects"],
+              supportPractices: fallback.supportPractices,
+              views: ["pipeline", "graph", "kanban", "timeline", "table"],
+            },
+          }),
+        },
+      ],
+      temperature: 0.35,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`OpenRouter solution map request failed: ${response.status}`);
+  }
+
+  const payload = await response.json();
+  const content = payload?.choices?.[0]?.message?.content;
+  return typeof content === "string" ? parseSolutionMap(content, fallback) : fallback;
 }
 
 function truncateLabel(label: string) {
@@ -807,16 +1133,151 @@ function ForceGraphView({
   );
 }
 
+function getSolutionMapPlanRows(solutionMap: SolutionMap | null) {
+  if (!solutionMap) return planRows;
+
+  return [
+    ...solutionMap.actions.map((action) => [
+      action.timeframe ?? "Next",
+      action.title,
+      action.priority === "high"
+        ? "High"
+        : action.priority === "medium"
+          ? "Medium"
+          : "Low",
+      "Action",
+    ] as [string, string, string, string]),
+    ...solutionMap.checkpoints.slice(0, 2).map((checkpoint) => [
+      checkpoint.cadence,
+      checkpoint.title,
+      "Medium",
+      "Checkpoint",
+    ] as [string, string, string, string]),
+  ].slice(0, 6);
+}
+
+function getSolutionMapKanbanColumns(solutionMap: SolutionMap | null) {
+  if (!solutionMap) return kanbanColumns;
+
+  return [
+    {
+      title: "To do",
+      items: solutionMap.actions
+        .filter((action) => action.status === "todo" || !action.status)
+        .map((action) => action.title),
+    },
+    {
+      title: "Doing",
+      items: solutionMap.actions
+        .filter((action) => action.status === "doing")
+        .map((action) => action.title),
+    },
+    {
+      title: "Review",
+      items: [
+        ...solutionMap.checkpoints.map((checkpoint) => checkpoint.title),
+        ...solutionMap.decisionPoints.map((decision) => decision.question),
+      ],
+    },
+    {
+      title: "Risks",
+      items: solutionMap.risks.map((risk) => risk.title),
+    },
+  ];
+}
+
+function getSolutionMapTimelineItems(solutionMap: SolutionMap | null) {
+  if (!solutionMap) return timelineItems;
+
+  return [
+    ...solutionMap.actions.map((action) => [
+      action.timeframe ?? "Next",
+      action.title,
+    ] as [string, string]),
+    ...solutionMap.milestones.map((milestone) => [
+      milestone.timeframe ?? "Milestone",
+      milestone.title,
+    ] as [string, string]),
+  ].slice(0, 8);
+}
+
+function createSolutionMapFlow(solutionMap: SolutionMap) {
+  const flowNodes: Node<GoalNodeData>[] = [
+    {
+      id: "current-state",
+      position: { x: 0, y: 100 },
+      data: {
+        label: "Current state",
+        kind: "context",
+        description: solutionMap.reverseEngineering.currentState,
+      },
+    },
+    {
+      id: "bottleneck",
+      position: { x: 180, y: 100 },
+      data: {
+        label: "Bottleneck",
+        kind: "reflection",
+        description: solutionMap.problem.bottleneck,
+      },
+    },
+    {
+      id: "desired-outcome",
+      position: { x: 760, y: 100 },
+      data: {
+        label: "Desired outcome",
+        kind: "outcome",
+        description: solutionMap.outcome.desired,
+      },
+    },
+  ];
+  const flowEdges: Edge[] = [
+    { id: "current-bottleneck", source: "current-state", target: "bottleneck" },
+  ];
+
+  solutionMap.actions.slice(0, 4).forEach((action, index) => {
+    const nodeId = `action-${action.id}`;
+    flowNodes.push({
+      id: nodeId,
+      position: { x: 340 + index * 135, y: index % 2 === 0 ? 40 : 170 },
+      data: {
+        label: action.title,
+        kind: "action",
+        description: action.description ?? "",
+      },
+    });
+    flowEdges.push({
+      id: `${index === 0 ? "bottleneck" : `action-${solutionMap.actions[index - 1].id}`}-${nodeId}`,
+      source: index === 0 ? "bottleneck" : `action-${solutionMap.actions[index - 1].id}`,
+      target: nodeId,
+    });
+  });
+
+  const renderedActions = solutionMap.actions.slice(0, 4);
+  const lastAction = renderedActions[renderedActions.length - 1];
+  if (lastAction) {
+    flowEdges.push({
+      id: `action-${lastAction.id}-outcome`,
+      source: `action-${lastAction.id}`,
+      target: "desired-outcome",
+    });
+  }
+
+  return { edges: flowEdges, nodes: flowNodes };
+}
+
 function renderPlanView(
   selectedView: ViewMode,
   graphState: GraphState,
   selectedProject: WorkspaceProject,
   selectedFile: PipelineFile,
+  solutionMap: SolutionMap | null,
 ) {
   if (selectedView === "Kanban") {
+    const columns = getSolutionMapKanbanColumns(solutionMap);
     return (
       <div className="plan-view kanban-board">
-        {kanbanColumns.map((column) => (
+        {columns.map((column) => (
           <section className="kanban-column" key={column.title}>
             <h3>{column.title}</h3>
             {column.items.map((item) => (
@@ -831,9 +1292,10 @@ function renderPlanView(
   }
 
   if (selectedView === "Timeline") {
+    const items = getSolutionMapTimelineItems(solutionMap);
     return (
       <div className="plan-view timeline-view">
-        {timelineItems.map(([time, action]) => (
+        {items.map(([time, action]) => (
           <div className="timeline-item" key={`${time}-${action}`}>
             <span>{time}</span>
             <strong>{action}</strong>
@@ -844,6 +1306,7 @@ function renderPlanView(
   }
 
   if (selectedView === "Table") {
+    const rows = getSolutionMapPlanRows(solutionMap);
     return (
       <div className="plan-view detail-table">
         <div className="detail-table-row detail-table-head">
@@ -852,7 +1315,7 @@ function renderPlanView(
           <span>Priority</span>
           <span>Type</span>
         </div>
-        {planRows.map(([time, action, priority, type]) => (
+        {rows.map(([time, action, priority, type]) => (
           <div className="detail-table-row" key={`${time}-${action}`}>
             <span>{time}</span>
             <strong>{action}</strong>
@@ -875,8 +1338,8 @@ function renderPlanView(
 
   return (
     <ReactFlow
-      nodes={graphState.nodes}
-      edges={graphState.edges}
+      nodes={solutionMap ? createSolutionMapFlow(solutionMap).nodes : graphState.nodes}
+      edges={solutionMap ? createSolutionMapFlow(solutionMap).edges : graphState.edges}
       fitView
       fitViewOptions={{ padding: 0.24 }}
       onNodesChange={graphState.onNodesChange}
@@ -990,10 +1453,14 @@ function App() {
     null,
   );
   const [questionSet, setQuestionSet] = useState<QuestionSet>(defaultQuestionSet);
+  const [solutionMapsByFileId, setSolutionMapsByFileId] = useState<
+    Record<string, SolutionMap>
+  >({});
   const [aiStatus, setAiStatus] = useState<"idle" | "local" | "live" | "error">(
     "idle",
   );
   const [isGeneratingPlan, setIsGeneratingPlan] = useState(false);
+  const [isGeneratingMap, setIsGeneratingMap] = useState(false);
   const selectedProject =
     projects.find((project) => project.id === selectedProjectId) ?? projects[0];
   const selectedFile =
@@ -1003,6 +1470,9 @@ function App() {
   const selectedTemplate = intakeTemplates.find(
     (template) => template.id === selectedTemplateId,
   );
+  const selectedSolutionMap = selectedFile
+    ? solutionMapsByFileId[selectedFile.id] ?? null
+    : null;
   const spiritualRecommendations = useMemo(
     () =>
       recommendSpiritualPractices({
@@ -1194,6 +1664,52 @@ function App() {
       setAiStatus("error");
     } finally {
       setIsGeneratingPlan(false);
+    }
+  }
+
+  async function confirmReflectionAndGenerateMap() {
+    if (!selectedFile || isGeneratingMap) {
+      return;
+    }
+
+    const fallback = createFallbackSolutionMap({
+      file: selectedFile,
+      questionSet,
+      supportPractices: spiritualRecommendations,
+    });
+
+    setIsGeneratingMap(true);
+    setSolutionMapsByFileId((current) => ({
+      ...current,
+      [selectedFile.id]: fallback,
+    }));
+
+    try {
+      if (!openRouterKey.trim()) {
+        setAiStatus("local");
+        return;
+      }
+
+      const liveMap = await requestOpenRouterSolutionMap({
+        apiKey: openRouterKey.trim(),
+        fallback,
+        file: selectedFile,
+        model: openRouterModel.trim() || openRouterModelOptions[0].value,
+        questionSet,
+      });
+      setSolutionMapsByFileId((current) => ({
+        ...current,
+        [selectedFile.id]: liveMap,
+      }));
+      setAiStatus("live");
+    } catch {
+      setSolutionMapsByFileId((current) => ({
+        ...current,
+        [selectedFile.id]: fallback,
+      }));
+      setAiStatus("error");
+    } finally {
+      setIsGeneratingMap(false);
     }
   }
 
@@ -1755,6 +2271,7 @@ function App() {
               { edges, nodes, onNodesChange },
               selectedProject,
               selectedFile,
+              selectedSolutionMap,
             )
           ) : (
             <section className="intake-stage" aria-label="Goal intake">
@@ -1821,7 +2338,7 @@ function App() {
               <span>{selectedView} preview</span>
             </div>
             <div className="table-grid">
-              {planRows.map(([time, action, priority, type]) => (
+              {getSolutionMapPlanRows(selectedSolutionMap).map(([time, action, priority, type]) => (
                 <div className="table-row" key={`${time}-${action}`}>
                   <span>{time}</span>
                   <strong>{action}</strong>
@@ -1847,6 +2364,21 @@ function App() {
               : "Solution Factory starts with your real situation, reflects what it understood, then turns the goal into an editable action map."}
           </p>
           {selectedFile ? <p>{questionSet.bottleneck}</p> : null}
+          {selectedFile ? (
+            <button
+              className="reflection-confirm"
+              disabled={isGeneratingMap}
+              onClick={confirmReflectionAndGenerateMap}
+              type="button"
+            >
+              <CheckCircle2 size={16} />
+              {selectedSolutionMap
+                ? "Regenerate solution map"
+                : isGeneratingMap
+                  ? "Generating solution map"
+                  : "Confirm reflection and generate map"}
+            </button>
+          ) : null}
         </section>
 
         <section className="question-panel generated">
@@ -1918,10 +2450,14 @@ function App() {
           </div>
           <p>
             {aiStatus === "live"
-              ? "OpenRouter generated the first reflection. The next step is turning answers into milestones, risks, and weekly actions."
+              ? selectedSolutionMap
+                ? "OpenRouter generated a structured solution map. Pipeline and table views now read from the same map."
+                : "OpenRouter generated the first reflection. Confirm it before generating the solution map."
               : aiStatus === "error"
-                ? "OpenRouter failed, so local demo questions are shown. Check the key/model and try again."
-                : "No plan should be generated until the app has enough context to avoid generic advice."}
+                ? "OpenRouter failed, so local fallback content is shown. Check the key/model and try again."
+                : selectedSolutionMap
+                  ? "A local fallback solution map is ready. It works backward from the confirmed reflection."
+                  : "No solution map should be generated until the reflection is confirmed."}
           </p>
         </section>
       </aside>
