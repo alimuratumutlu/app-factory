@@ -86,6 +86,31 @@ record:
 contains exact clock times, they can be imported. If not, the user's reminder
 settings should provide preferred times.
 
+## Imported Catalog
+
+The current catalog lives at:
+
+```text
+data/spiritual-practices.json
+```
+
+It is generated from the source project with:
+
+```bash
+npm run import:spiritual-catalog
+```
+
+The catalog schema lives at:
+
+```text
+schema/spiritual-practice-catalog.schema.json
+```
+
+The importer preserves source day labels, day arrays, target counts,
+categories, and intention tags. It does not invent exact clock times; each
+record keeps `schedule.timeOfDay` as `null` until a reviewed source or the
+user's reminder settings provide one.
+
 ## User Settings
 
 Recommended settings shape:
@@ -133,4 +158,3 @@ Spiritual support can appear as:
 - weekly review context
 
 It should not replace practical action steps.
-

@@ -1,0 +1,2814 @@
+{
+  "version": "1.0.0",
+  "source": {
+    "project": "5-min-dhikr",
+    "path": "lib/coreDhikrs.ts",
+    "importedFields": [
+      "id",
+      "arabic",
+      "transliteration",
+      "timing",
+      "days",
+      "frequency",
+      "category",
+      "type",
+      "target",
+      "intentions"
+    ]
+  },
+  "practices": [
+    {
+      "id": "core_dua_subhanallahi_ve_bihamdihi",
+      "type": "Dua",
+      "label": "سُبْحَانَ اللهِ وَبِحَمْدِهِ",
+      "displayText": "سُبْحَانَ اللهِ وَبِحَمْدِهِ",
+      "transliteration": "Subhanallahi ve bihamdihi",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "şükür"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt",
+          "Sal",
+          "Çar",
+          "Per",
+          "Cum",
+          "Cmt",
+          "Paz"
+        ],
+        "timingLabel": "HER GÜN",
+        "frequency": "Her Gün",
+        "count": 100,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_dua_subhanallahi_ve_bihamdihi",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_dua_la_havle",
+      "type": "Dua",
+      "label": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+      "displayText": "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ",
+      "transliteration": "La havle vela kuvvete illa billah",
+      "category": "Sabır",
+      "intentions": [
+        "güç",
+        "sabır"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt",
+          "Sal",
+          "Çar",
+          "Per",
+          "Cum",
+          "Cmt",
+          "Paz"
+        ],
+        "timingLabel": "HER GÜN",
+        "frequency": "Her Gün",
+        "count": 100,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_dua_la_havle",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_dua_estagfirullah",
+      "type": "Dua",
+      "label": "أَسْتَغْفِرُ اللَّهَ",
+      "displayText": "أَسْتَغْفِرُ اللَّهَ",
+      "transliteration": "Estağfirullah",
+      "category": "Tövbe",
+      "intentions": [
+        "tevbe"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt",
+          "Sal",
+          "Çar",
+          "Per",
+          "Cum",
+          "Cmt",
+          "Paz"
+        ],
+        "timingLabel": "HER GÜN",
+        "frequency": "Her Gün",
+        "count": 100,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_dua_estagfirullah",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_dua_allahumme_salli",
+      "type": "Dua",
+      "label": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ",
+      "displayText": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ",
+      "transliteration": "Allahümme salli ala Muhammed",
+      "category": "Şükür",
+      "intentions": [
+        "muhabbet",
+        "bereket"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 100,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_dua_allahumme_salli",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_1",
+      "type": "Esma",
+      "label": "YÂ MUSAVVİR",
+      "displayText": "YÂ MUSAVVİR",
+      "transliteration": "YÂ MUSAVVİR",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet",
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt"
+        ],
+        "timingLabel": "PAZARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 336,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_1",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_2",
+      "type": "Esma",
+      "label": "YÂ VÂSİ’",
+      "displayText": "YÂ VÂSİ’",
+      "transliteration": "YÂ VÂSİ’",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "huzur",
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt"
+        ],
+        "timingLabel": "PAZARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 137,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_2",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_3",
+      "type": "Esma",
+      "label": "YÂ MÜ’MİN",
+      "displayText": "YÂ MÜ’MİN",
+      "transliteration": "YÂ MÜ’MİN",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt"
+        ],
+        "timingLabel": "PAZARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 136,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_3",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_4",
+      "type": "Esma",
+      "label": "YÂ VEDÛD",
+      "displayText": "YÂ VEDÛD",
+      "transliteration": "YÂ VEDÛD",
+      "category": "Sabır",
+      "intentions": [
+        "huzur",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Pzt"
+        ],
+        "timingLabel": "PAZARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 20,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_4",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_5",
+      "type": "Esma",
+      "label": "YÂ DÂRR",
+      "displayText": "YÂ DÂRR",
+      "transliteration": "YÂ DÂRR",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 1001,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_5",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_6",
+      "type": "Esma",
+      "label": "YÂ MÜZİLL",
+      "displayText": "YÂ MÜZİLL",
+      "transliteration": "YÂ MÜZİLL",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 770,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_6",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_7",
+      "type": "Esma",
+      "label": "YÂ MÜNTEKİM",
+      "displayText": "YÂ MÜNTEKİM",
+      "transliteration": "YÂ MÜNTEKİM",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 630,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_7",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_8",
+      "type": "Esma",
+      "label": "YÂ MÜMİT",
+      "displayText": "YÂ MÜMİT",
+      "transliteration": "YÂ MÜMİT",
+      "category": "Şifa",
+      "intentions": [
+        "korunma",
+        "şifa"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 490,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_8",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_9",
+      "type": "Esma",
+      "label": "YÂ KAHHAR",
+      "displayText": "YÂ KAHHAR",
+      "transliteration": "YÂ KAHHAR",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 306,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_9",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_10",
+      "type": "Esma",
+      "label": "YÂ CEBBAR",
+      "displayText": "YÂ CEBBAR",
+      "transliteration": "YÂ CEBBAR",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 206,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_10",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_11",
+      "type": "Esma",
+      "label": "YÂ KAVİYY",
+      "displayText": "YÂ KAVİYY",
+      "transliteration": "YÂ KAVİYY",
+      "category": "Şükür",
+      "intentions": [
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 117,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_11",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_12",
+      "type": "Esma",
+      "label": "YÂ AZİZ",
+      "displayText": "YÂ AZİZ",
+      "transliteration": "YÂ AZİZ",
+      "category": "Şükür",
+      "intentions": [
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 94,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_12",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_13",
+      "type": "Esma",
+      "label": "YÂ VELİYY",
+      "displayText": "YÂ VELİYY",
+      "transliteration": "YÂ VELİYY",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet",
+        "ilim",
+        "aile"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 46,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_13",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_14",
+      "type": "Esma",
+      "label": "YÂ VÂHİD",
+      "displayText": "YÂ VÂHİD",
+      "transliteration": "YÂ VÂHİD",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Sal"
+        ],
+        "timingLabel": "SALI",
+        "frequency": "Haftada Bir",
+        "count": 19,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_14",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_15",
+      "type": "Esma",
+      "label": "YÂ AZİM",
+      "displayText": "YÂ AZİM",
+      "transliteration": "YÂ AZİM",
+      "category": "Şükür",
+      "intentions": [
+        "huzur",
+        "muhabbet",
+        "itibar"
+      ],
+      "schedule": {
+        "days": [
+          "Çar"
+        ],
+        "timingLabel": "ÇARŞAMBA",
+        "frequency": "Haftada Bir",
+        "count": 1020,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_15",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_16",
+      "type": "Esma",
+      "label": "YÂ FETTÂH",
+      "displayText": "YÂ FETTÂH",
+      "transliteration": "YÂ FETTÂH",
+      "category": "Şükür",
+      "intentions": [
+        "başarı",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Çar"
+        ],
+        "timingLabel": "ÇARŞAMBA",
+        "frequency": "Haftada Bir",
+        "count": 489,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_16",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_17",
+      "type": "Esma",
+      "label": "YÂ MÂLİK-ÜL MÜLK",
+      "displayText": "YÂ MÂLİK-ÜL MÜLK",
+      "transliteration": "YÂ MÂLİK-ÜL MÜLK",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "itibar",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Çar"
+        ],
+        "timingLabel": "ÇARŞAMBA",
+        "frequency": "Haftada Bir",
+        "count": 212,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_17",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_18",
+      "type": "Esma",
+      "label": "YÂ MELİK",
+      "displayText": "YÂ MELİK",
+      "transliteration": "YÂ MELİK",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Çar"
+        ],
+        "timingLabel": "ÇARŞAMBA",
+        "frequency": "Haftada Bir",
+        "count": 90,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_18",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_19",
+      "type": "Esma",
+      "label": "YÂ KÂBİD",
+      "displayText": "YÂ KÂBİD",
+      "transliteration": "YÂ KÂBİD",
+      "category": "Sabır",
+      "intentions": [
+        "başarı",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 903,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_19",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_20",
+      "type": "Esma",
+      "label": "YÂ MÜTEKEBBİR",
+      "displayText": "YÂ MÜTEKEBBİR",
+      "transliteration": "YÂ MÜTEKEBBİR",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 662,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_20",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_21",
+      "type": "Esma",
+      "label": "YÂ TEVVAB",
+      "displayText": "YÂ TEVVAB",
+      "transliteration": "YÂ TEVVAB",
+      "category": "Tövbe",
+      "intentions": [
+        "tevbe"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 409,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_21",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_22",
+      "type": "Esma",
+      "label": "YÂ ŞEHÎD",
+      "displayText": "YÂ ŞEHÎD",
+      "transliteration": "YÂ ŞEHÎD",
+      "category": "Sabır",
+      "intentions": [
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 319,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_22",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_23",
+      "type": "Esma",
+      "label": "YÂ KEBİR",
+      "displayText": "YÂ KEBİR",
+      "transliteration": "YÂ KEBİR",
+      "category": "Şükür",
+      "intentions": [
+        "huzur",
+        "itibar",
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 232,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_23",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_24",
+      "type": "Esma",
+      "label": "YÂ MUKSİT",
+      "displayText": "YÂ MUKSİT",
+      "transliteration": "YÂ MUKSİT",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 209,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_24",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_25",
+      "type": "Esma",
+      "label": "YÂ SEMİ’",
+      "displayText": "YÂ SEMİ’",
+      "transliteration": "YÂ SEMİ’",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 180,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_25",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_26",
+      "type": "Esma",
+      "label": "YÂ KUDDÛS",
+      "displayText": "YÂ KUDDÛS",
+      "transliteration": "YÂ KUDDÛS",
+      "category": "Tövbe",
+      "intentions": [
+        "tevbe",
+        "muhabbet",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 170,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_26",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_27",
+      "type": "Esma",
+      "label": "YÂ KAYYUM",
+      "displayText": "YÂ KAYYUM",
+      "transliteration": "YÂ KAYYUM",
+      "category": "Şükür",
+      "intentions": [
+        "itibar",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 156,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_27",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_28",
+      "type": "Esma",
+      "label": "YÂ ALİM",
+      "displayText": "YÂ ALİM",
+      "transliteration": "YÂ ALİM",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 150,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_28",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_29",
+      "type": "Esma",
+      "label": "YÂ MÜHEYMİN",
+      "displayText": "YÂ MÜHEYMİN",
+      "transliteration": "YÂ MÜHEYMİN",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 145,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_29",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_30",
+      "type": "Esma",
+      "label": "YÂ SAMED",
+      "displayText": "YÂ SAMED",
+      "transliteration": "YÂ SAMED",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 134,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_30",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_31",
+      "type": "Esma",
+      "label": "YÂ CAMİ’",
+      "displayText": "YÂ CAMİ’",
+      "transliteration": "YÂ CAMİ’",
+      "category": "Şükür",
+      "intentions": [
+        "muhabbet",
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 114,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_31",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_32",
+      "type": "Esma",
+      "label": "YÂ BEDİ’",
+      "displayText": "YÂ BEDİ’",
+      "transliteration": "YÂ BEDİ’",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "itibar",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 86,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_32",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_33",
+      "type": "Esma",
+      "label": "YÂ HAMÎD",
+      "displayText": "YÂ HAMÎD",
+      "transliteration": "YÂ HAMÎD",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 68,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_33",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_34",
+      "type": "Esma",
+      "label": "YÂ MÜBDİ’",
+      "displayText": "YÂ MÜBDİ’",
+      "transliteration": "YÂ MÜBDİ’",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 56,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_34",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_35",
+      "type": "Esma",
+      "label": "YÂ MÜCİB",
+      "displayText": "YÂ MÜCİB",
+      "transliteration": "YÂ MÜCİB",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Per"
+        ],
+        "timingLabel": "PERŞEMBE",
+        "frequency": "Haftada Bir",
+        "count": 3025,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_35",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_36",
+      "type": "Esma",
+      "label": "YÂ ĞAFFAR",
+      "displayText": "YÂ ĞAFFAR",
+      "transliteration": "YÂ ĞAFFAR",
+      "category": "Tövbe",
+      "intentions": [
+        "korunma",
+        "tevbe",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 1281,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_36",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_37",
+      "type": "Esma",
+      "label": "YÂ MUĞNÎ",
+      "displayText": "YÂ MUĞNÎ",
+      "transliteration": "YÂ MUĞNÎ",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 1100,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_37",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_38",
+      "type": "Esma",
+      "label": "YÂ AHİR",
+      "displayText": "YÂ AHİR",
+      "transliteration": "YÂ AHİR",
+      "category": "Sabır",
+      "intentions": [
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 801,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_38",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_39",
+      "type": "Esma",
+      "label": "YÂ VÂRİS",
+      "displayText": "YÂ VÂRİS",
+      "transliteration": "YÂ VÂRİS",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 707,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_39",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_40",
+      "type": "Esma",
+      "label": "YÂ METİN",
+      "displayText": "YÂ METİN",
+      "transliteration": "YÂ METİN",
+      "category": "Huzur",
+      "intentions": [
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 500,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_40",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_41",
+      "type": "Esma",
+      "label": "YÂ RAKÎB",
+      "displayText": "YÂ RAKÎB",
+      "transliteration": "YÂ RAKÎB",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 312,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_41",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_42",
+      "type": "Esma",
+      "label": "YÂ REZZAK",
+      "displayText": "YÂ REZZAK",
+      "transliteration": "YÂ REZZAK",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 308,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_42",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_43",
+      "type": "Esma",
+      "label": "YÂ KERİM",
+      "displayText": "YÂ KERİM",
+      "transliteration": "YÂ KERİM",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 270,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_43",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_44",
+      "type": "Esma",
+      "label": "YÂ NUR",
+      "displayText": "YÂ NUR",
+      "transliteration": "YÂ NUR",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 256,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_44",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_45",
+      "type": "Esma",
+      "label": "YÂ BERR",
+      "displayText": "YÂ BERR",
+      "transliteration": "YÂ BERR",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 202,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_45",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_46",
+      "type": "Esma",
+      "label": "YÂ NÂFİ’",
+      "displayText": "YÂ NÂFİ’",
+      "transliteration": "YÂ NÂFİ’",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "korunma",
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 201,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_46",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_47",
+      "type": "Esma",
+      "label": "YÂ MUHSÎ",
+      "displayText": "YÂ MUHSÎ",
+      "transliteration": "YÂ MUHSÎ",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 148,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_47",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_48",
+      "type": "Esma",
+      "label": "YÂ LÂTİF",
+      "displayText": "YÂ LÂTİF",
+      "transliteration": "YÂ LÂTİF",
+      "category": "Şükür",
+      "intentions": [
+        "itibar"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 129,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_48",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_49",
+      "type": "Esma",
+      "label": "YÂ HAKK",
+      "displayText": "YÂ HAKK",
+      "transliteration": "YÂ HAKK",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 108,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_49",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_50",
+      "type": "Esma",
+      "label": "YÂ HASİB",
+      "displayText": "YÂ HASİB",
+      "transliteration": "YÂ HASİB",
+      "category": "Şifa",
+      "intentions": [
+        "korunma",
+        "şifa",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 80,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_50",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_51",
+      "type": "Esma",
+      "label": "YÂ HAKÎM",
+      "displayText": "YÂ HAKÎM",
+      "transliteration": "YÂ HAKÎM",
+      "category": "Sabır",
+      "intentions": [
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 78,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_51",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_52",
+      "type": "Esma",
+      "label": "YÂ BÂSIT",
+      "displayText": "YÂ BÂSIT",
+      "transliteration": "YÂ BÂSIT",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 72,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_52",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_53",
+      "type": "Esma",
+      "label": "YÂ MUHYÎ",
+      "displayText": "YÂ MUHYÎ",
+      "transliteration": "YÂ MUHYÎ",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 68,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_53",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_54",
+      "type": "Esma",
+      "label": "YÂ VEKİL",
+      "displayText": "YÂ VEKİL",
+      "transliteration": "YÂ VEKİL",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 66,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_54",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_55",
+      "type": "Esma",
+      "label": "YÂ MECÎD",
+      "displayText": "YÂ MECÎD",
+      "transliteration": "YÂ MECÎD",
+      "category": "Şükür",
+      "intentions": [
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 57,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_55",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_56",
+      "type": "Esma",
+      "label": "YÂ MÂCİD",
+      "displayText": "YÂ MÂCİD",
+      "transliteration": "YÂ MÂCİD",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 48,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_56",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_57",
+      "type": "Esma",
+      "label": "YÂ VÂCİD",
+      "displayText": "YÂ VÂCİD",
+      "transliteration": "YÂ VÂCİD",
+      "category": "Sabır",
+      "intentions": [
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 14,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_57",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_58",
+      "type": "Esma",
+      "label": "YÂ VEHHÂB",
+      "displayText": "YÂ VEHHÂB",
+      "transliteration": "YÂ VEHHÂB",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 14,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_58",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_59",
+      "type": "Esma",
+      "label": "YÂ EHAD",
+      "displayText": "YÂ EHAD",
+      "transliteration": "YÂ EHAD",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cum"
+        ],
+        "timingLabel": "CUMA",
+        "frequency": "Haftada Bir",
+        "count": 13,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_59",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_60",
+      "type": "Esma",
+      "label": "YÂ ZAHİR",
+      "displayText": "YÂ ZAHİR",
+      "transliteration": "YÂ ZAHİR",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 1106,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_60",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_61",
+      "type": "Esma",
+      "label": "YÂ HAFÎZ",
+      "displayText": "YÂ HAFÎZ",
+      "transliteration": "YÂ HAFÎZ",
+      "category": "Şifa",
+      "intentions": [
+        "şifa"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 998,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_61",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_62",
+      "type": "Esma",
+      "label": "YÂ MUAHHİR",
+      "displayText": "YÂ MUAHHİR",
+      "transliteration": "YÂ MUAHHİR",
+      "category": "Sabır",
+      "intentions": [
+        "huzur",
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 846,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_62",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_63",
+      "type": "Esma",
+      "label": "YÂ MUKTEDİR",
+      "displayText": "YÂ MUKTEDİR",
+      "transliteration": "YÂ MUKTEDİR",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "itibar",
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 744,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_63",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_64",
+      "type": "Esma",
+      "label": "YÂ MÜTEÂLİ",
+      "displayText": "YÂ MÜTEÂLİ",
+      "transliteration": "YÂ MÜTEÂLİ",
+      "category": "Tövbe",
+      "intentions": [
+        "tevbe",
+        "itibar"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 551,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_64",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_65",
+      "type": "Esma",
+      "label": "YÂ RAUF",
+      "displayText": "YÂ RAUF",
+      "transliteration": "YÂ RAUF",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 286,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_65",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_66",
+      "type": "Esma",
+      "label": "YÂ MUKADDİM",
+      "displayText": "YÂ MUKADDİM",
+      "transliteration": "YÂ MUKADDİM",
+      "category": "Şükür",
+      "intentions": [
+        "itibar"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 184,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_66",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_67",
+      "type": "Esma",
+      "label": "YÂ MUİYD",
+      "displayText": "YÂ MUİYD",
+      "transliteration": "YÂ MUİYD",
+      "category": "Huzur",
+      "intentions": [
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 124,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_67",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_68",
+      "type": "Esma",
+      "label": "YÂ HALİM",
+      "displayText": "YÂ HALİM",
+      "transliteration": "YÂ HALİM",
+      "category": "Huzur",
+      "intentions": [
+        "aile",
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Cmt"
+        ],
+        "timingLabel": "CUMARTESİ",
+        "frequency": "Haftada Bir",
+        "count": 88,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_68",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_69",
+      "type": "Esma",
+      "label": "YÂ HÂFİD",
+      "displayText": "YÂ HÂFİD",
+      "transliteration": "YÂ HÂFİD",
+      "category": "Huzur",
+      "intentions": [
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 1481,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_69",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_70",
+      "type": "Esma",
+      "label": "YÂ ĞAFÛR",
+      "displayText": "YÂ ĞAFÛR",
+      "transliteration": "YÂ ĞAFÛR",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 1286,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_70",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_71",
+      "type": "Esma",
+      "label": "YÂ ZÜL CELÂLİ VEL İKRAM",
+      "displayText": "YÂ ZÜL CELÂLİ VEL İKRAM",
+      "transliteration": "YÂ ZÜL CELÂLİ VEL İKRAM",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 1098,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_71",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_72",
+      "type": "Esma",
+      "label": "YÂ ĞANİYY",
+      "displayText": "YÂ ĞANİYY",
+      "transliteration": "YÂ ĞANİYY",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 1060,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_72",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_73",
+      "type": "Esma",
+      "label": "YÂ HABÎR",
+      "displayText": "YÂ HABÎR",
+      "transliteration": "YÂ HABÎR",
+      "category": "Huzur",
+      "intentions": [
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 812,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_73",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_74",
+      "type": "Esma",
+      "label": "YÂ HÂLIK",
+      "displayText": "YÂ HÂLIK",
+      "transliteration": "YÂ HÂLIK",
+      "category": "Şükür",
+      "intentions": [
+        "başarı",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 731,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_74",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_75",
+      "type": "Esma",
+      "label": "YÂ BÂİS",
+      "displayText": "YÂ BÂİS",
+      "transliteration": "YÂ BÂİS",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 573,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_75",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_76",
+      "type": "Esma",
+      "label": "YÂ MUKIYT",
+      "displayText": "YÂ MUKIYT",
+      "transliteration": "YÂ MUKIYT",
+      "category": "Şükür",
+      "intentions": [
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 550,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_76",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_77",
+      "type": "Esma",
+      "label": "YÂ ŞEKÛR",
+      "displayText": "YÂ ŞEKÛR",
+      "transliteration": "YÂ ŞEKÛR",
+      "category": "Şifa",
+      "intentions": [
+        "korunma",
+        "şifa"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 526,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_77",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_78",
+      "type": "Esma",
+      "label": "YÂ RAŞÎD",
+      "displayText": "YÂ RAŞÎD",
+      "transliteration": "YÂ RAŞÎD",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 514,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_78",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_79",
+      "type": "Esma",
+      "label": "YÂ RÂFİ’",
+      "displayText": "YÂ RÂFİ’",
+      "transliteration": "YÂ RÂFİ’",
+      "category": "Sabır",
+      "intentions": [
+        "muhabbet",
+        "itibar",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 351,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_79",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_80",
+      "type": "Esma",
+      "label": "YÂ KADİR",
+      "displayText": "YÂ KADİR",
+      "transliteration": "YÂ KADİR",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 305,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_80",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_81",
+      "type": "Esma",
+      "label": "YÂ BASÎR",
+      "displayText": "YÂ BASÎR",
+      "transliteration": "YÂ BASÎR",
+      "category": "Sabır",
+      "intentions": [
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 302,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_81",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_82",
+      "type": "Esma",
+      "label": "YÂ RAHMAN",
+      "displayText": "YÂ RAHMAN",
+      "transliteration": "YÂ RAHMAN",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 298,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_82",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_83",
+      "type": "Esma",
+      "label": "YÂ SABUR",
+      "displayText": "YÂ SABUR",
+      "transliteration": "YÂ SABUR",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 298,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_83",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_84",
+      "type": "Esma",
+      "label": "YÂ RAHÎM",
+      "displayText": "YÂ RAHÎM",
+      "transliteration": "YÂ RAHÎM",
+      "category": "Rızık",
+      "intentions": [
+        "kazanç",
+        "korunma",
+        "muhabbet"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 258,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_84",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_85",
+      "type": "Esma",
+      "label": "YÂ BARİ’",
+      "displayText": "YÂ BARİ’",
+      "transliteration": "YÂ BARİ’",
+      "category": "Sabır",
+      "intentions": [
+        "başarı",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 213,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_85",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_86",
+      "type": "Esma",
+      "label": "YÂ MÂNİ’",
+      "displayText": "YÂ MÂNİ’",
+      "transliteration": "YÂ MÂNİ’",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 161,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_86",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_87",
+      "type": "Esma",
+      "label": "YÂ AFÜVV",
+      "displayText": "YÂ AFÜVV",
+      "transliteration": "YÂ AFÜVV",
+      "category": "Tövbe",
+      "intentions": [
+        "huzur",
+        "tevbe"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 156,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_87",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_88",
+      "type": "Esma",
+      "label": "YÂ SELÂM",
+      "displayText": "YÂ SELÂM",
+      "transliteration": "YÂ SELÂM",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 131,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_88",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_89",
+      "type": "Esma",
+      "label": "YÂ MUİZZ",
+      "displayText": "YÂ MUİZZ",
+      "transliteration": "YÂ MUİZZ",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 117,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_89",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_90",
+      "type": "Esma",
+      "label": "YÂ BAKİ",
+      "displayText": "YÂ BAKİ",
+      "transliteration": "YÂ BAKİ",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 113,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_90",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_91",
+      "type": "Esma",
+      "label": "YÂ ALİYY",
+      "displayText": "YÂ ALİYY",
+      "transliteration": "YÂ ALİYY",
+      "category": "Şükür",
+      "intentions": [
+        "muhabbet",
+        "itibar"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 110,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_91",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_92",
+      "type": "Esma",
+      "label": "YÂ ADL",
+      "displayText": "YÂ ADL",
+      "transliteration": "YÂ ADL",
+      "category": "Tövbe",
+      "intentions": [
+        "korunma",
+        "tevbe",
+        "iman"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 104,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_92",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_93",
+      "type": "Esma",
+      "label": "YÂ CELİL",
+      "displayText": "YÂ CELİL",
+      "transliteration": "YÂ CELİL",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 73,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_93",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_94",
+      "type": "Esma",
+      "label": "YÂ HAKEM",
+      "displayText": "YÂ HAKEM",
+      "transliteration": "YÂ HAKEM",
+      "category": "Huzur",
+      "intentions": [
+        "huzur"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 68,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_94",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_95",
+      "type": "Esma",
+      "label": "YÂ ALLAH",
+      "displayText": "YÂ ALLAH",
+      "transliteration": "YÂ ALLAH",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 66,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_95",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_96",
+      "type": "Esma",
+      "label": "YÂ VALİ",
+      "displayText": "YÂ VALİ",
+      "transliteration": "YÂ VALİ",
+      "category": "Sabır",
+      "intentions": [
+        "korunma",
+        "muhabbet",
+        "güç"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 47,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_96",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_97",
+      "type": "Esma",
+      "label": "YÂ EVVEL",
+      "displayText": "YÂ EVVEL",
+      "transliteration": "YÂ EVVEL",
+      "category": "Şükür",
+      "intentions": [
+        "başarı"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 37,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_97",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_98",
+      "type": "Esma",
+      "label": "YÂ HADİ",
+      "displayText": "YÂ HADİ",
+      "transliteration": "YÂ HADİ",
+      "category": "Huzur",
+      "intentions": [
+        "muhabbet",
+        "aile"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 20,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_98",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_99",
+      "type": "Esma",
+      "label": "YÂ HAYY",
+      "displayText": "YÂ HAYY",
+      "transliteration": "YÂ HAYY",
+      "category": "Sabır",
+      "intentions": [
+        "korunma"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 18,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_99",
+        "reviewStatus": "needs_religious_review"
+      }
+    },
+    {
+      "id": "core_esma_100",
+      "type": "Esma",
+      "label": "YÂ BATIN",
+      "displayText": "YÂ BATIN",
+      "transliteration": "YÂ BATIN",
+      "category": "Huzur",
+      "intentions": [
+        "huzur",
+        "muhabbet",
+        "ilim"
+      ],
+      "schedule": {
+        "days": [
+          "Paz"
+        ],
+        "timingLabel": "PAZAR",
+        "frequency": "Haftada Bir",
+        "count": 62,
+        "timeOfDay": null
+      },
+      "source": {
+        "project": "5-min-dhikr",
+        "path": "lib/coreDhikrs.ts",
+        "sourceId": "core_esma_100",
+        "reviewStatus": "needs_religious_review"
+      }
+    }
+  ]
+}

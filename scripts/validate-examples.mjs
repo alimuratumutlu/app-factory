@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const examplesRoot = "examples";
@@ -8,6 +8,7 @@ const pipelinePaths = readdirSync(examplesRoot, { withFileTypes: true })
 const solutionMapPaths = readdirSync(examplesRoot, { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .map((entry) => join(examplesRoot, entry.name, "solution-map.json"));
+const spiritualCatalogPath = "data/spiritual-practices.json";
 
 const failures = [];
 
@@ -58,6 +59,31 @@ for (const solutionMapPath of solutionMapPaths) {
   if (!solutionMap.outcome?.desired) failures.push(`${solutionMapPath}: Solution map must include outcome.desired.`);
   if (!Array.isArray(solutionMap.actions)) failures.push(`${solutionMapPath}: Solution map actions must be an array.`);
   if (!Array.isArray(solutionMap.checkpoints)) failures.push(`${solutionMapPath}: Solution map checkpoints must be an array.`);
+}
+
+if (existsSync(spiritualCatalogPath)) {
+  const catalog = JSON.parse(readFileSync(spiritualCatalogPath, "utf8"));
+  const practiceIds = new Set();
+
+  if (!catalog.version) failures.push(`${spiritualCatalogPath}: Catalog must include version.`);
+  if (!catalog.source?.path) failures.push(`${spiritualCatalogPath}: Catalog must include source.path.`);
+  if (!Array.isArray(catalog.practices)) failures.push(`${spiritualCatalogPath}: Catalog practices must be an array.`);
+
+  for (const practice of catalog.practices ?? []) {
+    if (!practice.id) failures.push(`${spiritualCatalogPath}: Every practice must include id.`);
+    if (practiceIds.has(practice.id)) failures.push(`${spiritualCatalogPath}: Duplicate practice id: ${practice.id}`);
+    practiceIds.add(practice.id);
+    if (!["Esma", "Dua", "Dhikr"].includes(practice.type)) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} has unsupported type.`);
+    if (!practice.label) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include label.`);
+    if (!practice.transliteration) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include transliteration.`);
+    if (!Array.isArray(practice.intentions) || practice.intentions.length === 0) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include intentions.`);
+    if (!Array.isArray(practice.schedule?.days)) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include schedule.days.`);
+    if (!practice.schedule?.timingLabel) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include schedule.timingLabel.`);
+    if (!Number.isFinite(practice.schedule?.count) || practice.schedule.count <= 0) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include positive schedule.count.`);
+    if (!("timeOfDay" in (practice.schedule ?? {}))) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include schedule.timeOfDay.`);
+    if (!practice.source?.path) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include source.path.`);
+    if (!practice.source?.reviewStatus) failures.push(`${spiritualCatalogPath}: Practice ${practice.id ?? "(unknown)"} must include source.reviewStatus.`);
+  }
 }
 
 if (failures.length > 0) {

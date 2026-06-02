@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/alimuratumutlu/solution-factory/schema/spiritual-practice-catalog.schema.json",
+  "title": "Solution Factory Spiritual Practice Catalog",
+  "type": "object",
+  "required": ["version", "source", "practices"],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": ["project", "path"],
+      "properties": {
+        "project": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "importedFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "practices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/practice"
+      }
+    }
+  },
+  "$defs": {
+    "practice": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "label",
+        "displayText",
+        "transliteration",
+        "intentions",
+        "schedule",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": ["Esma", "Dua", "Dhikr"]
+        },
+        "label": {
+          "type": "string"
+        },
+        "displayText": {
+          "type": "string"
+        },
+        "transliteration": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "intentions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "schedule": {
+          "type": "object",
+          "required": ["days", "timingLabel", "count", "timeOfDay"],
+          "properties": {
+            "days": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timingLabel": {
+              "type": "string"
+            },
+            "frequency": {
+              "type": "string"
+            },
+            "count": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "timeOfDay": {
+              "type": ["string", "null"]
+            }
+          }
+        },
+        "source": {
+          "type": "object",
+          "required": ["project", "path", "reviewStatus"],
+          "properties": {
+            "project": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "sourceId": {
+              "type": "string"
+            },
+            "reviewStatus": {
+              "enum": ["needs_religious_review", "reviewed", "rejected"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
